@@ -117,102 +117,7 @@
     <section>
         <div class="conteiner2">
             <div class="cards">
-                <div class="card">
-                    <img src="./img/img1.png" alt="icon1">
-                    <h4 class="card-title">ELLERY X M'O CAPSULE</h4>
-                    <p class="card-text">Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
-                    <p class="earn">$52.00</p>
-                    <div class="card-hide">
-                        <img src="./img/Rectangle3.png" alt="затемнение">
-                        <div class="card-hide2">
-                            <img src="./img/Vector1.png" alt="табличка">
-                            <div class="card-hide3">
-                                <img src="./img/Vector2.png" alt="корзина">
-                                <p>Add to Cart</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./img/img2.png" alt="icon1">
-                    <h4 class="card-title">ELLERY X M'O CAPSULE</h4>
-                    <p class="card-text">Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
-                    <p class="earn">$52.00</p>
-                    <div class="card-hide">
-                        <img src="./img/Rectangle3.png" alt="затемнение">
-                        <div class="card-hide2">
-                            <img src="./img/Vector1.png" alt="табличка">
-                            <div class="card-hide3">
-                                <img src="./img/Vector2.png" alt="корзина">
-                                <p>Add to Cart</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./img/img3.png" alt="icon1">
-                    <h4 class="card-title">ELLERY X M'O CAPSULE</h4>
-                    <p class="card-text">Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
-                    <p class="earn">$52.00</p>
-                    <div class="card-hide">
-                        <img src="./img/Rectangle3.png" alt="затемнение">
-                        <div class="card-hide2">
-                            <img src="./img/Vector1.png" alt="табличка">
-                            <div class="card-hide3">
-                                <img src="./img/Vector2.png" alt="корзина">
-                                <p>Add to Cart</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./img/img4.png" alt="icon1">
-                    <h4 class="card-title">ELLERY X M'O CAPSULE</h4>
-                    <p class="card-text">Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
-                    <p class="earn">$52.00</p>
-                    <div class="card-hide">
-                        <img src="./img/Rectangle3.png" alt="затемнение">
-                        <div class="card-hide2">
-                            <img src="./img/Vector1.png" alt="табличка">
-                            <div class="card-hide3">
-                                <img src="./img/Vector2.png" alt="корзина">
-                                <p>Add to Cart</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./img/img5.png" alt="icon1">
-                    <h4 class="card-title">ELLERY X M'O CAPSULE</h4>
-                    <p class="card-text">Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
-                    <p class="earn">$52.00</p>
-                    <div class="card-hide">
-                        <img src="./img/Rectangle3.png" alt="затемнение">
-                        <div class="card-hide2">
-                            <img src="./img/Vector1.png" alt="табличка">
-                            <div class="card-hide3">
-                                <img src="./img/Vector2.png" alt="корзина">
-                                <p>Add to Cart</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./img/img6.png" alt="icon1">
-                    <h4 class="card-title">ELLERY X M'O CAPSULE</h4>
-                    <p class="card-text">Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
-                    <p class="earn">$52.00</p>
-                    <div class="card-hide">
-                        <img src="./img/Rectangle3.png" alt="затемнение">
-                        <div class="card-hide2">
-                            <img src="./img/Vector1.png" alt="табличка">
-                            <div class="card-hide3">
-                                <img src="./img/Vector2.png" alt="корзина">
-                                <p>Add to Cart</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -299,7 +204,72 @@
             </div>
         </div>
     </footer>
+    <script src="dataProduct.js"></script>
+    <script>
+        const dataEl = JSON.parse(dataProduct);
 
+        const cardsBox = document.querySelector('.cards');
+
+        dataEl.forEach(element => {
+            const productBox = document.createElement('div');
+            productBox.classList.add('card');
+
+            const imgEl = document.createElement('img');
+            imgEl.src = element.src;
+            imgEl.alt = element.alt;
+
+            const h4El = document.createElement('h4');
+            h4El.classList.add('card-title');
+            h4El.textContent = element.name;
+
+            const pEl = document.createElement('p');
+            pEl.classList.add('card-text')
+            pEl.textContent = element.content;
+
+            const earnEl = document.createElement('p');
+            earnEl.classList.add('earn');
+            earnEl.textContent = element.price;
+
+            const hideBox = document.createElement('div');
+            hideBox.classList.add('card-hide');
+
+            const rectEl = document.createElement('img');
+            rectEl.src = "./img/Rectangle3.png";
+            rectEl.alt = "Затемнение";
+
+            const hide2Box = document.createElement('div');
+            hide2Box.classList.add('card-hide2');
+
+            const tableEl = document.createElement('img');
+            tableEl.src = "./img/Vector1.png";
+            tableEl.alt = "Табличка";
+
+            const hide3Box = document.createElement('div');
+            hide3Box.classList.add('card-hide3');
+
+            const basketEl = document.createElement('img');
+            basketEl.src = "./img/Vector2.png";
+            basketEl.alt = "Корзина";
+
+            const addEl = document.createElement('p');
+            addEl.textContent = "Add to Cart";
+
+            cardsBox.appendChild(productBox);
+            productBox.appendChild(imgEl);
+            productBox.appendChild(h4El);
+            productBox.appendChild(pEl);
+            productBox.appendChild(earnEl);
+            productBox.appendChild(hideBox);
+            hideBox.appendChild(rectEl);
+            hideBox.appendChild(hide2Box);
+            hide2Box.appendChild(tableEl);
+            hide2Box.appendChild(hide3Box);
+            hide3Box.appendChild(basketEl);
+            hide3Box.appendChild(addEl);
+
+
+        })
+    </script>
 </body>
 
 </html>
